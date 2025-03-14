@@ -11,5 +11,5 @@ There is field study code for the field study portion of the manuscript in a dir
 <sup>1</sup> Earth and Environmental Studies Department, Montclair State University.\
 <sup>2</sup> Geological Sciences, University of Florida\
 <sup>3</sup> Marine Policy Center, Woods Hole Oceanographic Institution.\
-<sup>4</sup> Geology and Geophysics Department, Woods Hole Oceanographic Institution.\
+<sup>4</sup> Geology and Geophysics Department, Woods Hole Oceanographic Institution.
 
