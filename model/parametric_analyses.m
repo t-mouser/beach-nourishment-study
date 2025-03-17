@@ -69,6 +69,8 @@ c=.25e6; %fixed nourishment cost
 xN1=50; xN2=xN1; %Nourishment extent seaward (m)
 nourish1=0; nourish2=0; % sets baseline nourishment parameters for time zero (non-nourishment)
 
+%% VARIABLE INPUT ENDS - SCRIPT RUNS BELOW
+
 %% Counters for the multi-run analyses
 nn=length(C1_vec); mm=length(C2_vec); %vector lengths
 
