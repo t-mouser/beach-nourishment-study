@@ -1,4 +1,3 @@
-%% Timing the analyses
 disp(datetime)
 tic
 time_last=0; % Used to time the model run
