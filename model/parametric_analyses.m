@@ -14,7 +14,7 @@ file_title = 'parametric_analysis_cs_ba_v1_test';
 dir_loc = 'mat-data/';
 FileName = strcat(dir_loc,file_title);
 
-%% Input parameters %%
+%% Input parameters
 
 %% Time Parameters
 tmax=50; dt=0.1; t=0:dt:tmax; nt=length(t); 
