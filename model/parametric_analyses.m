@@ -3,13 +3,13 @@ tic
 time_last=0; % Used to time the model run
 
 %% Use to SAVE the model run
-save_run = true; % 
+save_run = true;
+
 % File naming convention: s (symmetric), % a (asymmetric), 
 % c (coastal dynamics), b (beta values)
 % Example: parametric_analysis_cs_ba = 
 % parametric analysis, coastal symmetric and beta asymmetric
 file_title = 'parametric_analysis_cs_ba_v1_test';
-
 dir_loc = 'mat-data/';
 FileName = strcat(dir_loc,file_title);
 
@@ -72,30 +72,36 @@ nourish1=0; nourish2=0; % sets baseline nourishment parameters for time zero (no
 %% Counters for the multi-run analyses
 nn=length(C1_vec); mm=length(C2_vec); %vector lengths
 
-%% Parameter Output Containers
-% Rotation Values
-R1_cord_pa=NaN(nn,mm); R2_cord_pa=NaN(nn,mm);
-R1_cons_pa=NaN(nn,mm); R2_cons_pa=NaN(nn,mm);
-R1_risk_pa=NaN(nn,mm); R2_risk_pa=NaN(nn,mm);
-TNB_cord_pa=NaN(nn,mm); NB1_cord_pa=NaN(nn,mm); NB2_cord_pa=NaN(nn,mm);
-TNB_cons_pa=NaN(nn,mm); NB1_cons_pa=NaN(nn,mm); NB2_cons_pa=NaN(nn,mm);
-TNB_risk_pa=NaN(nn,mm); NB1_risk_pa=NaN(nn,mm); NB2_risk_pa=NaN(nn,mm);
-Beh1_cord_pa=NaN(nn,mm); Beh2_cord_pa=NaN(nn,mm); Beh_cord_pa=NaN(nn,mm);
-Beh1_cons_pa=NaN(nn,mm); Beh2_cons_pa=NaN(nn,mm); Beh_cons_pa=NaN(nn,mm);
-Beh1_risk_pa=NaN(nn,mm); Beh2_risk_pa=NaN(nn,mm); Beh_risk_pa=NaN(nn,mm);
-avg_w1_cord_pa=NaN(nn,mm); avg_w2_cord_pa=NaN(nn,mm);
-avg_w1_cons_pa=NaN(nn,mm); avg_w2_cons_pa=NaN(nn,mm);
-avg_w1_risk_pa=NaN(nn,mm); avg_w2_risk_pa=NaN(nn,mm);
-V1_nrsh_cord_pa=NaN(nn,mm); V2_nrsh_cord_pa=NaN(nn,mm);
-V1_nrsh_cons_pa=NaN(nn,mm); V2_nrsh_cons_pa=NaN(nn,mm);
-V1_nrsh_risk_pa=NaN(nn,mm); V2_nrsh_risk_pa=NaN(nn,mm);
-w1_nrsh_cord_pa=NaN(nn,mm); w2_nrsh_cord_pa=NaN(nn,mm);
-w1_nrsh_cons_pa=NaN(nn,mm); w2_nrsh_cons_pa=NaN(nn,mm);
-w1_nrsh_risk_pa=NaN(nn,mm); w2_nrsh_risk_pa=NaN(nn,mm);
+%% Variable Storage
+% Matrices to store data for all the model runs
+% _pa after each variable simply stands for parametric analysis
+%       Abbreviations:
+%       Coordination = cord; 
+%       Conservative Non-Coordination = cons; 
+%       Risky Non-Coordination = risk
+R1_cord_pa=NaN(nn,mm); R2_cord_pa=NaN(nn,mm); % chosen rotation intervals coordination
+R1_cons_pa=NaN(nn,mm); R2_cons_pa=NaN(nn,mm); % chosen rotation intervals conservative non-coordination
+R1_risk_pa=NaN(nn,mm); R2_risk_pa=NaN(nn,mm); % chosen rotation intervals risky non-coordination
+TNB_cord_pa=NaN(nn,mm); NB1_cord_pa=NaN(nn,mm); NB2_cord_pa=NaN(nn,mm); % Total net benefits coordination
+TNB_cons_pa=NaN(nn,mm); NB1_cons_pa=NaN(nn,mm); NB2_cons_pa=NaN(nn,mm); % Total net benefits cons. non coord
+TNB_risk_pa=NaN(nn,mm); NB1_risk_pa=NaN(nn,mm); NB2_risk_pa=NaN(nn,mm); % Total net benefits risky non coord
+Beh1_cord_pa=NaN(nn,mm); Beh2_cord_pa=NaN(nn,mm); Beh_cord_pa=NaN(nn,mm); % Behaviors coordination
+Beh1_cons_pa=NaN(nn,mm); Beh2_cons_pa=NaN(nn,mm); Beh_cons_pa=NaN(nn,mm); % Behaviors cons. non coord
+Beh1_risk_pa=NaN(nn,mm); Beh2_risk_pa=NaN(nn,mm); Beh_risk_pa=NaN(nn,mm); % Behaviors risky non coord
+avg_w1_cord_pa=NaN(nn,mm); avg_w2_cord_pa=NaN(nn,mm); % Average beach widths coordination
+avg_w1_cons_pa=NaN(nn,mm); avg_w2_cons_pa=NaN(nn,mm); % Average beach widths cons non coord
+avg_w1_risk_pa=NaN(nn,mm); avg_w2_risk_pa=NaN(nn,mm); % Average beach widths risky non coord
+V1_nrsh_cord_pa=NaN(nn,mm); V2_nrsh_cord_pa=NaN(nn,mm); % Nourishment volumes coordination
+V1_nrsh_cons_pa=NaN(nn,mm); V2_nrsh_cons_pa=NaN(nn,mm); % Nourishment volumes cons non coord
+V1_nrsh_risk_pa=NaN(nn,mm); V2_nrsh_risk_pa=NaN(nn,mm); % Nourishment volumes risky non coord
+w1_nrsh_cord_pa=NaN(nn,mm); w2_nrsh_cord_pa=NaN(nn,mm); % Nourishment width added coordination
+w1_nrsh_cons_pa=NaN(nn,mm); w2_nrsh_cons_pa=NaN(nn,mm); % Nourishment width added cons non coord
+w1_nrsh_risk_pa=NaN(nn,mm); w2_nrsh_risk_pa=NaN(nn,mm); % Nourishment width added risky non coord
 
-%% Main code %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Uses Function maincode from maincode.m 
 for ii=1:nn % BPV1 Loop, stored in rows
-    %% containers
+    %% vectors for data
+    % Stores the data for each vector to be added to the end matrix
     R1_cord_vec=NaN(1,mm); R2_cord_vec=NaN(1,mm);
     R1_cons_vec=NaN(1,mm); R2_cons_vec=NaN(1,mm);
     R1_risk_vec=NaN(1,mm); R2_risk_vec=NaN(1,mm);
@@ -115,12 +121,12 @@ for ii=1:nn % BPV1 Loop, stored in rows
     w1_nrsh_cons_vec=NaN(1,mm); w2_nrsh_cons_vec=NaN(1,mm);
     w1_nrsh_risk_vec=NaN(1,mm); w2_nrsh_risk_vec=NaN(1,mm);
 
-    %% For Loop for vectors
+    %% Loop for vectors
     for jj=1:mm % BPV2 Loop, stored in Columns
         BPV1=C1_vec(ii); %
         BPV2=C2_vec(jj);%sets the gamma value for each loop
         alpha1=nlots_along1*BPV1; alpha2=nlots_along2*BPV2; % alpha (property value * # properties)
-        %% This is the FUNCTION being called
+        %% maincode FUNCTION being called
         [R1_cord,R2_cord,TNB_cord,NB1_cord,NB2_cord,Beh1_cord,Beh2_cord,Beh_cord,...
         avg_w1_cord,avg_w2_cord,R1_cons,R2_cons,TNB_cons,NB1_cons,NB2_cons,Beh1_cons,...
         Beh2_cons,Beh_cons,avg_w1_cons,avg_w2_cons,R1_risk,R2_risk,TNB_risk,NB1_risk,...
@@ -130,7 +136,7 @@ for ii=1:nn % BPV1 Loop, stored in rows
         =maincode(dt,nt,t,tmax,R1_vector,R2_vector,BPV1,BPV2,beta1,beta2,...
         disc,w_init,s,m,x_lot,alpha1,alpha2,theta_eq,gamma,gamma_g4,gamma_g3,Ka,Kc,D,...
         phi,c,xN1,xN2,analysis_avg_yrs);
-        %% Storage (see variable storage section for descriptions) %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %% Vector Data Input (see variable storage section for descriptions)
         R1_cord_vec(jj)=R1_cord; R2_cord_vec(jj)=R2_cord;
         R1_cons_vec(jj)=R1_cons; R2_cons_vec(jj)=R2_cons;
         R1_risk_vec(jj)=R1_risk; R2_risk_vec(jj)=R2_risk;
@@ -160,6 +166,9 @@ for ii=1:nn % BPV1 Loop, stored in rows
         fprintf(formatSpec,floor(ii),floor(jj),loop_time,total_time);
         time_last=total_time;
     end
+    %% Adds each vector to the matrix to create the final regime matrices
+    % These matrices are determined by the property value inputs in this
+    % code
     R1_cord_pa(ii,:)=R1_cord_vec; R2_cord_pa(ii,:)=R2_cord_vec;
     R1_cons_pa(ii,:)=R1_cons_vec; R2_cons_pa(ii,:)=R2_cons_vec;
     R1_risk_pa(ii,:)=R1_risk_vec; R2_risk_pa(ii,:)=R2_risk_vec;
@@ -179,15 +188,9 @@ for ii=1:nn % BPV1 Loop, stored in rows
     w1_nrsh_cons_pa(ii,:)=w1_nrsh_cons_vec; w2_nrsh_cons_pa(ii,:)=w2_nrsh_cons_vec;
     w1_nrsh_risk_pa(ii,:)=w1_nrsh_risk_vec; w2_nrsh_risk_pa(ii,:)=w2_nrsh_risk_vec;
 
-    %% Time Counter (outer loop)
-    % formatSpec = 'Row loop %1.1f has completed after %2.2f minutes.\n';
-    % timeElapse = round(toc/60,2);
-    % fprintf(formatSpec,round(ii,0),timeElapse)
 end
 
 %% Save Data
-time_elapsed=toc; %elapsed runtime for external script for computational accounting
 if save_run == true
     save(FileName); %saves output data (from this external script only!) in your root directory
 end
-toc
