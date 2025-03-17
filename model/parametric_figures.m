@@ -1,5 +1,3 @@
-%exist("basePV1_basePV2_sensitivity_analyses_DATA_2024_02_04_v1.mat")
-% load("parametric_analysis_cs_ba_v1.mat")
 mat_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v1.mat",... % #2 - used for figures in main manuscript
     "parametric_analysis_cs_ba_v2.mat",... % #3
@@ -13,8 +11,6 @@ file_name=strcat(dir_loc,mat_files(file_number));
 load(file_name); % Loads your file from the array of filenames above
 
 %% Load ColorFiles
-% colorfile = matfile("colormap_tol.mat"); %
-% colorize = colorfile.tolmap;
 colorfile = matfile("colormaps/colormap_auto_benefits2.mat"); 
 colorize = colorfile.custommap;
 colorizerev = colorfile.custommaprev;
