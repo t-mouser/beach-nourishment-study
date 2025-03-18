@@ -1,10 +1,14 @@
+%% Data Files
+% Vector of data files to be studied
 mat_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v1.mat",... % #2 - used for figures in main manuscript
     "parametric_analysis_cs_ba_v2.mat",... % #3
     "parametric_analysis_ca_bs_v2.mat",... % #4
     "parametric_analysis_ca_ba_v1.mat",... % #5
     "sensitivity_analysis_cs_ba_v1_5yr_avg",... % #6
-    "cs_ba_rewrite_v1"]; % #7 Vector of data files to be studied
+    "cs_ba_rewrite_v1"]; % #7 
+
+% IMPORTANT: Select The Data File To Plot
 file_number=2;
 dir_loc='mat-data/';
 file_name=strcat(dir_loc,mat_files(file_number));
