@@ -39,19 +39,19 @@ ref_eff = abs(ref_w_init - ref_gamma * ref_tmax); % Caculates the reference poin
 
 %% Load Colormaps
 % Colors used for behaviors
-colorfile = matfile("colormaps/colormap_auto_benefits2.mat"); 
+colorfile = matfile("colormaps/behaviors.mat"); 
 colorize = colorfile.custommap;
 colorizerev = colorfile.custommaprev;
 % Colors used for subtractive analysis - midpoint is white
-opeqcolorfile = matfile("colormaps/colormap_auto_op_eq.mat"); 
+opeqcolorfile = matfile("colormaps/contrast_equal.mat"); 
 opeq_color = opeqcolorfile.op_equal_cmap;
 opeq_colorrev = opeqcolorfile.op_equal_cmap_rev;
 % Colors representing Community 1
-com1_colorfile=matfile("colormaps/colormap_auto_com1.mat"); 
+com1_colorfile=matfile("colormaps/community_1.mat"); 
 com1_color= com1_colorfile.com1_cmap;
 com1_colorrev= com1_colorfile.com1_cmap_rev;
 % Colors representing Community 2
-com2_colorfile=matfile("colormaps/colormap_auto_com2.mat"); 
+com2_colorfile=matfile("colormaps/community_2.mat"); 
 com2_color= com2_colorfile.com2_cmap;
 com2_colorrev= com2_colorfile.com2_cmap_rev;
 
