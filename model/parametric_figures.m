@@ -10,28 +10,20 @@ dir_loc='mat-data/';
 file_name=strcat(dir_loc,mat_files(file_number));
 load(file_name); % Loads your file from the array of filenames above
 
-%% Load ColorFiles
+%% Load Colormaps
+% Colors used for behaviors
 colorfile = matfile("colormaps/colormap_auto_benefits2.mat"); 
 colorize = colorfile.custommap;
 colorizerev = colorfile.custommaprev;
-bencolorfile = matfile("colormaps/colormap_auto_benefits.mat"); 
-bencolorize = bencolorfile.benmap;
-bencolorizerev = bencolorfile.benmaprev;
-xscolorfile = matfile("colormaps/colormap_auto_xs.mat"); 
-xscolorize = xscolorfile.xsmap;
-xscolorizerev = xscolorfile.xsmaprev;
-lrcolorfile = matfile("colormaps/auto_colormap_lr.mat"); 
-lrcolorize = lrcolorfile.lrcustommap;
-lrcolorizerev = lrcolorfile.lrcustommaprev;
-eqcolorfile = matfile("colormaps/colormap_auto_equal.mat"); 
-eq_color = eqcolorfile.equal_cmap;
-eq_color_rev = eqcolorfile.equal_cmap_rev;
+% Colors used for subtractive analysis - midpoint is white
 opeqcolorfile = matfile("colormaps/colormap_auto_op_eq.mat"); 
 opeq_color = opeqcolorfile.op_equal_cmap;
 opeq_colorrev = opeqcolorfile.op_equal_cmap_rev;
+% Colors representing Community 1
 com1_colorfile=matfile("colormaps/colormap_auto_com1.mat"); 
 com1_color= com1_colorfile.com1_cmap;
 com1_colorrev= com1_colorfile.com1_cmap_rev;
+% Colors representing Community 2
 com2_colorfile=matfile("colormaps/colormap_auto_com2.mat"); 
 com2_color= com2_colorfile.com2_cmap;
 com2_colorrev= com2_colorfile.com2_cmap_rev;
