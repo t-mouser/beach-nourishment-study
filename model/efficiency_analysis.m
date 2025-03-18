@@ -7,7 +7,8 @@ efficiency_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v2.mat",... % #3
     "parametric_analysis_ca_bs_v2.mat",... % #4
     "parametric_analysis_ca_ba_v1.mat",... % #5
-    "sensitivity_analysis_cs_ba_v1_5yr_avg"]; % #6 
+    "sensitivity_analysis_cs_ba_v1_5yr_avg",... % #6
+    "future_analysis_cs_ba_v1.mat"]; % #7 
 
 %% IMPORTANT Pick your file name by changing the variable below
 file_number=2;
