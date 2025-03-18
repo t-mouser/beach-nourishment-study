@@ -1,4 +1,5 @@
 %% Data Files
+dir_loc='mat-data/'; % subdirectory location
 % Vector of data files to be studied
 mat_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v1.mat",... % #2 - used for figures in main manuscript
@@ -6,29 +7,29 @@ mat_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_ca_bs_v2.mat",... % #4
     "parametric_analysis_ca_ba_v1.mat",... % #5
     "sensitivity_analysis_cs_ba_v1_5yr_avg",... % #6
-    "cs_ba_rewrite_v1"]; % #7 
+    "future_analysis_cs_ba_v1"]; % #7 
 
-% IMPORTANT: Select The Data File To Plot
+%% IMPORTANT: Select The Data File To Plot
 file_number=2;
-dir_loc='mat-data/';
+
 file_name=strcat(dir_loc,mat_files(file_number));
 load(file_name); % Loads your file from the array of filenames above
 
 %% Load Colormaps
 % Colors used for behaviors
-colorfile = matfile("colormaps/colormap_auto_benefits2.mat"); 
+colorfile = matfile("colormaps/behaviors.mat"); 
 colorize = colorfile.custommap;
 colorizerev = colorfile.custommaprev;
 % Colors used for subtractive analysis - midpoint is white
-opeqcolorfile = matfile("colormaps/colormap_auto_op_eq.mat"); 
+opeqcolorfile = matfile("colormaps/contrast_equal.mat"); 
 opeq_color = opeqcolorfile.op_equal_cmap;
 opeq_colorrev = opeqcolorfile.op_equal_cmap_rev;
 % Colors representing Community 1
-com1_colorfile=matfile("colormaps/colormap_auto_com1.mat"); 
+com1_colorfile=matfile("colormaps/community_1.mat"); 
 com1_color= com1_colorfile.com1_cmap;
 com1_colorrev= com1_colorfile.com1_cmap_rev;
 % Colors representing Community 2
-com2_colorfile=matfile("colormaps/colormap_auto_com2.mat"); 
+com2_colorfile=matfile("colormaps/community_2.mat"); 
 com2_color= com2_colorfile.com2_cmap;
 com2_colorrev= com2_colorfile.com2_cmap_rev;
 
@@ -60,13 +61,13 @@ subplot(1,2,1)
 pcolor(C1_vec/1e6,C2_vec/1e6,Beh_cord_pa)
 colormap(colorizerev)
 hold on
-p7 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#A42517','MarkerEdgeColor','none')
-p6 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#C82D1D','MarkerEdgeColor','none')
-p5 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#E46E62','MarkerEdgeColor','none')
-p4 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#F9E3E1','MarkerEdgeColor','none')
-p3 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#D1D9E8','MarkerEdgeColor','none')
-p2 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#7DAAD8','MarkerEdgeColor','none')
-p1 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#0459B4','MarkerEdgeColor','none')
+p7 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#A42517','MarkerEdgeColor','none');
+p6 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#C82D1D','MarkerEdgeColor','none');
+p5 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#E46E62','MarkerEdgeColor','none');
+p4 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#F9E3E1','MarkerEdgeColor','none');
+p3 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#D1D9E8','MarkerEdgeColor','none');
+p2 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#7DAAD8','MarkerEdgeColor','none');
+p1 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#0459B4','MarkerEdgeColor','none');
 
 legend([p1, p2,p3,p4,p5,p6,p7],{'Seaward Growth','seaward growth / hold the line',...
     'Hold the Line','Mixed','Slow Retreat','Mixed Retreat',...
@@ -85,13 +86,13 @@ pcolor(C1_vec/1e6,C2_vec/1e6,Beh_cons_pa)
 colormap(colorizerev)
 shading flat
 hold on
-p7 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#A42517','MarkerEdgeColor','none')
-p6 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#C82D1D','MarkerEdgeColor','none')
-p5 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#E46E62','MarkerEdgeColor','none')
-p4 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#F9E3E1','MarkerEdgeColor','none')
-p3 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#D1D9E8','MarkerEdgeColor','none')
-p2 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#7DAAD8','MarkerEdgeColor','none')
-p1 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#0459B4','MarkerEdgeColor','none')
+p7 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#A42517','MarkerEdgeColor','none');
+p6 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#C82D1D','MarkerEdgeColor','none');
+p5 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#E46E62','MarkerEdgeColor','none');
+p4 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#F9E3E1','MarkerEdgeColor','none');
+p3 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#D1D9E8','MarkerEdgeColor','none');
+p2 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#7DAAD8','MarkerEdgeColor','none');
+p1 = plot(NaN,NaN,'Marker','s','LineStyle','None','MarkerSize',MarkSize,'MarkerFaceColor','#0459B4','MarkerEdgeColor','none');
 
 legend([p1, p2,p3,p4,p5,p6,p7],{'Seaward Growth','seaward growth / hold the line',...
     'Hold the Line','Mixed','Slow Retreat','Mixed Retreat',...
@@ -161,7 +162,7 @@ ylabel(ylabel_c1vec,'FontSize',axis_font)
 set(gca,'FontSize',sg_font)
 title('Community 1','FontSize',title_font,'fontname',fig_font)
 clim([0 max_cord])
-c1=colorbar;
+colorbar;
 
 subplot(1,2,2)
 pcolor(C1_vec/1e6,C2_vec/1e6,V2_nrsh_cord_pa)
@@ -175,7 +176,7 @@ ylabel(ylabel_c1vec,'FontSize',axis_font)
 set(gca,'FontSize',sg_font)
 title('Community 2','FontSize',title_font,'fontname',fig_font)
 clim([0 max_cord])
-c2=colorbar;
+colorbar;
 
 colormap(subplot(1,2,1),com1_colorrev)
 colormap(subplot(1,2,2),com2_colorrev)
@@ -200,7 +201,7 @@ ylabel(ylabel_c1vec,'FontSize',axis_font)
 set(gca,'FontSize',sg_font)
 title('Community 1','FontSize',title_font,'fontname',fig_font)
 clim([0 max_cons])
-c1=colorbar;
+colorbar;
 
 subplot(1,2,2)
 pcolor(C1_vec/1e6,C2_vec/1e6,V2_nrsh_cons_pa)
@@ -214,7 +215,7 @@ ylabel(ylabel_c1vec,'FontSize',axis_font)
 set(gca,'FontSize',sg_font)
 title('Community 2','FontSize',title_font,'fontname',fig_font)
 clim([0 max_cons])
-c2=colorbar;
+colorbar;
 
 colormap(subplot(1,2,1),com1_colorrev)
 colormap(subplot(1,2,2),com2_colorrev)
