@@ -8,8 +8,8 @@ There is a main code directory for the model, entitled >maincode> with a subdire
 There is field study code for the field study portion of the manuscript in a directory entitle >field study>. This code is in Python along with associated data files. Please see the documentation in this directory for how to run this code.
 
 ### Author Affiliations
-<sup>1</sup> Earth and Environmental Studies Department, Montclair State University.\
-<sup>2</sup> Geological Sciences, University of Florida\
+<sup>1</sup> Geological Sciences, University of Florida\
+<sup>2</sup> Earth and Environmental Studies Department, Montclair State University.\
 <sup>3</sup> Marine Policy Center, Woods Hole Oceanographic Institution.\
 <sup>4</sup> Geology and Geophysics Department, Woods Hole Oceanographic Institution.
 
