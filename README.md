@@ -1,4 +1,4 @@
-# beach-nourishment-model
+# Beach Nourishment Model and Field Study
 This readme file explains how to use the code used to model nourishment efficiency in alongshore paired communities, as well as the field study conducted along the New Jersey coastline in the journal submission entitle *From Coastal Retreat to Seaward Growth: Emergent Behaviors from Paired Community Beach Nourishment Choices* by J. Lorenzo-Trueba<sup>1</sup>, A. Janoff<sup>2</sup>, O. Thomas<sup>2</sup>, P. Hoagland<sup>3</sup>, D. Jin<sup>3</sup>, and A. Ashton<sup>4</sup>.
 
 ## Model Code
