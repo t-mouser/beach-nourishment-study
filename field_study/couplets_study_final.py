@@ -40,7 +40,7 @@ categories=np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,2,2,3,3,3])
 mapping={0:'X',1:'v',2:'v',3:'v'}
 
 #%%Load the data
-df = pd.read_csv('couplets_study_new_eff.csv')
+df = pd.read_csv('field_study_couplets.csv')
 # Grab the data
 Municipality = df['RegionName']
 couplets = df['Couplet']
