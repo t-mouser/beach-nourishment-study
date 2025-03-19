@@ -23,10 +23,14 @@ Use future_analysis.m to create regime diagrams that look at specific community 
 ### Parametric Figures (no efficiency metric) 
 Use parametric_figures.m to create regime diagram pseudocolor plots of behaviors, beach widths, and nourishment volumes. Other data outputs not pertaining to efficiency can be plotted here as well. There is no efficiency metric calculated in maincode due to our requirement of determining the Reference Value (W<sub>R</sub>) based on multiple model runs. 
 
-This code creates figures for both parametric_analyses.m and future_analysis.m.
+Note: It is possible to make future figures in this file as well, though it would have to be slightly rewritten.
+
+### Future Figures (no efficiency metric) 
+
+This code creates same figures as parametric_analyses.m, specifically for future analyses in data-file future_analysis.m.
 
 ### Efficiency
-Use efficiency.m to calculate nourishment efficiency and plot regime diagrams relating to nourishment efficiency. This script takes .mat data files from both parametric_analyses.m and future_analysis.m.
+Use efficiency.m to calculate nourishment efficiency and plot regime diagrams relating to nourishment efficiency. This script takes .mat data files from both parametric_analyses.m.
 
 ## File Explanations
 ### Maincode
