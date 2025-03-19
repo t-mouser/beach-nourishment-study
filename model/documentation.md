@@ -30,7 +30,12 @@ Note: It is possible to make future figures in this file as well, though it woul
 This code creates same figures as parametric_analyses.m, specifically for future analyses in data-file future_analysis.m.
 
 ### Efficiency
-Use efficiency.m to calculate nourishment efficiency and plot regime diagrams relating to nourishment efficiency. This script takes .mat data files from both parametric_analyses.m.
+Use efficiency.m to calculate nourishment efficiency and plot regime diagrams relating to nourishment efficiency. 
+
+Note: This script can produce figures for future efficiency as well, but x and y labels will have to changed, as will vertex scaling.
+
+### Future Efficiency
+Use future_efficiency.m to do the same as in efficiency.m, except for future projections. It will calculate nourishment efficiency and plot regime diagrams relating to nourishment efficiency. 
 
 ## File Explanations
 ### Maincode
