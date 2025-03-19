@@ -50,4 +50,18 @@ This code creates data for regime diagrams based on increasing erosion and sand 
 ### Single Runs
 This code runs single runs based on .mat data files. You select the community Property Value per community you would like to plot, and the maincode function (a duplicate contained within this file) runs and plots beach widths and net benefits over time. Parametric Analyses need to be run prior to utilizing this tool, or existing .mat files must be utilized.
 
+### Figures Code (parametric, future)
+This code is used to plot regime diagrams relating to nourishment volume and community behaviors. Future analysis data can be plotted in parametric_figures.m, but the x and y axes need to be adjusted to the new vectors (sand cost and erosion rate). For this reason, future_figures was also added as it is ready to use.
+
+### Efficiency (parametric, future)
+The efficiency codes use data files produced by analysis (parametric or future) and calculates efficiency and plots efficiency regime diagrams. While parametric_efficiency.m can analyze future_analysis.m data files, the x and y labels and values have to be changed (similar to figures code). As a result, future_efficiency.m was added so that it can be used without altering the code.
+
+## Directories
+### mat-data
+The mat-data directory contains output data produced by the model. If you run code with this model, it will save the code in the mat-data directory, so it is necessary that you set up a directory structure in the same way.
+
+### colormaps
+The colormaps folder contains arrays that are used to create unique colormaps to shade the pseudocolor plots. These colormaps are loaded anywhere figures are created (figures and efficiency codes), and therefore need to be included in your directory structure for this code to operate correctly. 
+
+Additionally, there is a create_colormaps.m file that is included in this folder which will allow you to create new colormaps should you wish to do so.
 
