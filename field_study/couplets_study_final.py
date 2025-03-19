@@ -91,6 +91,7 @@ def file_name_formatter(orig):
     new=new.replace('$','')
     new=new.replace('-','')
     new=new.replace('^','')
+    new=new.replace('/','')
     return new
     
 #File names
