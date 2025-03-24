@@ -1,3 +1,25 @@
+""" 
+This module is used to analyze the field data collected for the coastlines
+of New Jersey (NJ). The data for this analysis is loaded from the file
+field_study_couplets.csv and is available in a more the readable Microsoft
+Excel file format including equations in the file field_study_couplets.xlsx.
+
+To run this code, the data csv must be in the same directory as the code,
+or you will need to change the csv read location in the "load the data" 
+section.
+
+Running this will create four plots exploring the difference in nourishment
+efforts and efficiencies for couplets along the NJ coastline. If you wish to
+save these plots to local folder, please use the section entitled "Save Files"
+and set the variables save_files4 and save_files67 to True. You will also need
+to create a directory structure to house your outputs as such:
+    current_directory/figures/eps
+    current_directory/figures/png
+
+This code automates the save file name, but you can override this if desired 
+in the same section as above.
+"""
+
 #%% Import Libraries
 import matplotlib.pyplot as plt
 import pandas as pd
