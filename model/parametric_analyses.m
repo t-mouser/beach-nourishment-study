@@ -9,7 +9,8 @@ When running this code, please feel free to change the parameter inputs and
 file save names to generate new analyses. 
 
 In this iteration, two vectors are created to analyze how different
-baseline property values impact community nourishment decisions.
+baseline property values impact community nourishment decisions and 
+outcomes.
 
 Additionally, the erosion rates (gamma values) for the boundary cells can
 be changed to force different inherent efficiencies for their adjacent
