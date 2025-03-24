@@ -4,7 +4,7 @@ parametric_analyses.m and future_analyses.m. This function will not run
 without inputs from another script. 
 
 The purpose of this function is to run the model based on a range
-of parameter values and create regime diagrams of community behaviors,
+of parameter values used to create regime diagrams of community behaviors,
 nourishment efforts, and nourishment efficiencies. 
 
 The geomorphological calculations, behavior analysis, and optimization
