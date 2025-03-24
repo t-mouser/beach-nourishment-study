@@ -1,3 +1,16 @@
+%{
+This code is used to create regime diagrams showing community behaviors and
+nourishment volumes based on .mat data files. These diagrams are based on
+data outputs from future_analysis.m.
+
+To use this script, select the mat file you would like to load from the
+vector "mat_files" in the two sections below. You can also add your mat
+file name to that variable if you have created your own data file.
+
+This code produces two extra diagrams not included in the associated
+manuscript that may be of value to your understanding of the data.
+%}
+
 %% Data Files
 % Vector of data files to be studied
 mat_files=["future_analysis_cs_ba_v1.mat",...
