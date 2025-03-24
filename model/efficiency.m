@@ -1,3 +1,16 @@
+%{
+This code is used to calculate nourishment efficiencies from output 
+matrices created by parametric_analyses.m and future_analyses.m. 
+
+You will need to select and load the .mat data file you wish to analyze in 
+the two sections below. From there, the script will calculate the 
+nourishment efficiency and plot them in a regime diagram.
+
+The reference value utilized in the nourishment efficiency equation is
+calculated by analyzing inputs from all of the data files listed in the
+variable "efficiency_files". 
+%}
+
 %% Data Files
 dir_loc='mat-data/'; % the subdirectory where .mat files are located
 % Place your mat files in the efficiency_files variable as a vector
@@ -7,8 +20,7 @@ efficiency_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v2.mat",... % #3
     "parametric_analysis_ca_bs_v2.mat",... % #4
     "parametric_analysis_ca_ba_v1.mat",... % #5
-    "sensitivity_analysis_cs_ba_v1_5yr_avg",... % #6
-    "future_analysis_cs_ba_v1.mat"]; % #7 
+    "sensitivity_analysis_cs_ba_v1_5yr_avg"]; % #6
 
 %% IMPORTANT Pick your file name by changing the variable below
 file_number=2;
