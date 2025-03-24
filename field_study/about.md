@@ -12,7 +12,7 @@ The data used in this analysis is located in the excel and csv file. The excel w
 The python code in couplets_study_final.py is used to analyze the field data in the csv file field_study_couplets.csv. 
 
 ### Geospatial Data
-The geopackages containing digitized beach widths used in this field data are included in this repository. Beach widths were digitized in QGIS 3.28 2-Firenze using Landsat 7 & 8 imagery from USGS Earth Explorer. The satellite images utilized were:
+The beach_widths.gpkg geopackage containing digitized beach widths used in this field data are included in this repository. Beach widths were digitized in QGIS 3.28 2-Firenze using Landsat 7 & 8 imagery from USGS Earth Explorer. The satellite images utilized were:
 * LC08_L1TP_013032_20200613_20200823_02_T1
 * LC08_L1TP_014033_20200722_20200911_02_T1
 * LE07_L1TP_014032_20000808_20200917_02_T1
