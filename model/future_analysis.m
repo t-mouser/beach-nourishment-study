@@ -1,3 +1,22 @@
+%{
+This code is used to create the regime diagram data files that are used to
+plot behaviors, nourishment volumes, and nourishment efficiencies. It runs
+the maincode function. This script specifically evaluates communities 
+optimizing their nourishment schedules under coordination, conservative 
+non-coordination, and risky non-cordination. 
+
+When running this code, please feel free to change the parameter inputs and 
+file save names to generate new analyses. 
+
+In this iteration, two vectors are created to analyze how different
+erosion rates and sand costs impact community nourishment decisions and 
+outcomes.
+
+Additionally, the erosion rates (gamma values) for the boundary cells can
+be changed to force different inherent efficiencies for their adjacent
+community.
+%}
+
 %% For Processing Time Keeping Only
 disp(datetime)
 tic
