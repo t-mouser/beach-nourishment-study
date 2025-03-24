@@ -1,3 +1,16 @@
+%{
+This code is used to calculate nourishment efficiencies from output 
+matrices created by future_analysis.m. 
+
+You will need to select and load the .mat data file you wish to analyze in 
+the two sections below. From there, the script will calculate the 
+nourishment efficiency and plot them in a regime diagram.
+
+The reference value utilized in the nourishment efficiency equation is
+calculated by analyzing inputs from all of the data files listed in the
+variable "efficiency_files". 
+%}
+
 %% Data Files
 dir_loc='mat-data/'; % the subdirectory where .mat files are located
 
