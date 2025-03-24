@@ -1,3 +1,16 @@
+%{
+This is the function which runs the model simulations with inputs from 
+parametric_analyses.m and future_analyses.m. This function will not run
+without inputs from another script. 
+
+The purpose of this function is to run the model based on a range
+of parameter values and create regime diagrams of community behaviors,
+nourishment efforts, and nourishment efficiencies. 
+
+The geomorphological calculations, behavior analysis, and optimization
+schemes can be found within in this function.
+%}
+
 function [R1_cord,R2_cord,TNB_cord,NB1_cord,NB2_cord,Beh1_cord,Beh2_cord,Beh_cord,...
     avg_w1_cord,avg_w2_cord,R1_cons,R2_cons,TNB_cons,NB1_cons,NB2_cons,Beh1_cons,...
     Beh2_cons,Beh_cons,avg_w1_cons,avg_w2_cons,R1_risk,R2_risk,TNB_risk,NB1_risk,...
