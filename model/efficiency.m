@@ -1,6 +1,6 @@
 %{
 This code is used to calculate nourishment efficiencies from output 
-matrices created by parametric_analyses.m and future_analyses.m. 
+matrices created by parametric_analyses.m. 
 
 You will need to select and load the .mat data file you wish to analyze in 
 the two sections below. From there, the script will calculate the 
