@@ -1,8 +1,23 @@
+%{
+This code is used to create subplots that show individual community beach
+widths and net benefits line charts based on .mat model run data. 
+
+To run this code, you will need to select your data file from the
+"mat_data_files" variable using the "file_number" variable. You can also
+add your own output data from the parametric_analyses.m file.
+
+You will also need to select the the community baseline property values you
+would like to plot from the C1_vec and C2_vec variables in your data file.
+
+This code also calculates the efficiency based on the files available in
+the "mat_data_files" variable. 
+%}
+
 %% Data Files
 dir_loc='mat-data/'; % the subdirectory where .mat files are located
 % Place your mat files in the efficiency_files variable as a vector
 % Vector of data files to be studied
-efficiency_files=["parametric_analysis_cs_bs_v1.mat",... % #1
+mat_data_files=["parametric_analysis_cs_bs_v1.mat",... % #1
     "parametric_analysis_cs_ba_v1.mat",... % #2
     "parametric_analysis_cs_ba_v2.mat",... % #3
     "parametric_analysis_ca_bs_v2.mat",... % #4
@@ -19,13 +34,13 @@ C1 = 9; % Community 1
 C2 = 13; % Community 2
 
 %% Determine Reference Value from Data Sources
-nFiles = length(efficiency_files); % Number of data sources being evaluated for entire study
+nFiles = length(mat_data_files); % Number of data sources being evaluated for entire study
 filenames=string.empty(0,nFiles); % Will hold strings of your files names
 gama_data=NaN(nFiles); % Container to house gamma values from each data file
 tmax_data=NaN(nFiles); % Container to house tmax data from each data file
 w_init_data=NaN(nFiles); % Container to house w_init_data from each data file
 for iData=1:nFiles    
-    filenames(iData) = string(strcat(dir_loc,efficiency_files(iData))); % Get the file name and make sure its a string
+    filenames(iData) = string(strcat(dir_loc,mat_data_files(iData))); % Get the file name and make sure its a string
     load(filenames(iData),"gamma_array","tmax","w_init"); % Load the datafile
     gama_data(iData)=max(gamma_array); % Gets the maximum gamma value for that dataset (is an array in the dataset)
     tmax_data(iData)=tmax; % Gets the tmax value for that dataset (one value in dataset)
